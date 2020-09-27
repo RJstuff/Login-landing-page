@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Login Page</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	</head>
+	<body>
+        <img id="boy" src="checkmark-boy-user.svg">
+		
+		<div class="form">
+	
+			<form class="login-form" action="" method="post">
+                
+				<h2>Login</h2>
+				<div class="icons">
+					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="#"><i class="fab fa-google"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+				</div>
+				<input id="mail" type="text" name="" value="" placeholder="Email" required>
+				<input id="password" type="text" name="" pattern=".{8,}" title="8 or more characters" value="" placeholder="Password" required>
+                <input id="checkboxID" type="checkbox" value="" >
+                <label for="checkboxID">Remember me</label><br>
+				<button id="submit" type="submit" name="button" onclick="store()">Login</button>
+				<p class="options">Not Registered? <a href="#">Create an Account</a></p>
+			</form>
+			
+		</div>
+        
+        <div id="text">
+            <h2 id="printMail"></h2>
+            <h2 id="printPassword"></h2>
+   
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        
+        <script>
+            TweenMax.to('#boy', 1, {opacity: 1, x: 750, delay:1});
+            TweenMax.to('.form', 1 ,{opacity: 0.8, y: -300, delay: 2});
+            TweenMax.to('#printMail', 1 ,{opacity: 1, x: 0, delay: 3, ease: Back.easeOut.config(9)});
+            TweenMax.to('#printPassword', 1 ,{opacity: 1, x: 0, delay: 3, ease: Back.easeOut.config(25)});
+
+        </script>
+        
+        <script> 
+            var Uname = document.getElementById('mail');
+            var pw = document.getElementById('password');
+            
+            // storing input from register-form
+            function store() {
+                
+                localStorage.setItem('name', Uname.value);
+                localStorage.setItem('pw', pw.value);
+                
+            }
+            
+            let booleanCheck = !document.getElementById("checkboxID").checked;
+            if(booleanCheck){
+                console.log(booleanCheck);
+            }
+            
+            var print_user = localStorage.getItem('name');
+            var print_pw = localStorage.getItem('pw');
+            
+            
+            var text = document.getElementById("printMail"); 
+            var text_pwd = document.getElementById("printPassword");
+          
+            if(document.getElementById("checkboxID").checked){               
+                
+            }
+            
+            else{
+                if(print_user){
+                    
+                    text.innerHTML = `Email: ${print_user}`;
+                    text_pwd.innerHTML = `Password: ${print_pw}`;
+                }              
+                
+            }
+            localStorage.clear;          
+                      
+        </script>  
+
+	</body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---->
